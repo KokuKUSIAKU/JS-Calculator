@@ -1,0 +1,10 @@
+/*****
+ new calculator
+
+***/
+#keyboard2 td{
+  width:3rem;
+  height: 3rem;
+  text-align: center;
+  border:1px solid black; 
+}
