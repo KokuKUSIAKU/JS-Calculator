@@ -10,7 +10,7 @@ var view = {
 
   init:function init(){
     var digitsButton = "";
-    var keyboard = '<table id ="keyboard2">'+
+    var keyboard = '<table id ="keyboard">'+
                   '<tbody>'+
                   '<tr><td class="display" colspan="4"></td></tr>'+
                   '<tr><td data-control="ac">AC</td><td data-control="ce">CE</td><td data-operator="/">/</td><td data-operator="*">x</td></tr>'+
