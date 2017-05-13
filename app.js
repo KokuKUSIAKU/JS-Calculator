@@ -21,15 +21,7 @@ var view = {
                   '</tbody>'+
                   '</table>';
 
-    keyboard = $(keyboard);
-
-   $(keyboard).on("click", '[data-value]', ouctopus.writeDigit);
-   $(keyboard).on("click", '[data-operator]', ouctopus.addOperator);
-   $(keyboard).on("click", '[data-equal]', ouctopus.showResult);
-   $(keyboard).on("click", '[data-deci]', ouctopus.addDeciMark);
-   $(keyboard).on("click", '[data-control="ac"]', ouctopus.clearAC);
-   $(keyboard).on("click", '[data-control="ce"]', ouctopus.clearCE);
-    
+    keyboard = $(keyboard); 
     $("#app").append(keyboard);
 
     return;
@@ -133,6 +125,13 @@ var ouctopus = {
    },
   init:function(){
     view.init();
+    var display = $('#keyboard');
+    display.on("click", '[data-value]', ouctopus.writeDigit);
+    display.on("click", '[data-operator]', ouctopus.addOperator);
+    display.on("click", '[data-equal]', ouctopus.showResult);
+    display.on("click", '[data-deci]', ouctopus.addDeciMark);
+    display.on("click", '[data-control="ac"]', ouctopus.clearAC);
+    display.on("click", '[data-control="ce"]', ouctopus.clearCE);
     return; 
   }
 
