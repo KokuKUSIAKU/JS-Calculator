@@ -1,9 +1,11 @@
-import React from "react"; 
+import React from "react";
 import style from "./style.scss";
 
-function Display ({expression}) {
+function Display({ expression }) {
   return (
-    <div id="display">{expression}</div>
+    <div id="display-frame">
+      <div id="display">{expression}</div>
+    </div>
   );
 }
 
