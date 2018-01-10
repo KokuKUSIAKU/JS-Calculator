@@ -1,4 +1,4 @@
-
+import { connect } from "react-redux"; 
 import React from "react";
 import LinearLayout from "../../LinearLayout";
 import {
@@ -27,11 +27,11 @@ const {
 
 const { CE, C, MS, MC, MPlus, MMinus } = Controls;
 
-const STANDARD = () => {
+const STANDARD = ({expression}) => {
   //return <div> test in STANDARD </div>;
   return (
     <div id="frame">
-      <Display/>
+      <Display expression={expression}/>
       <LinearLayout wrap="wrap">
         <MC />
         <MS/>
@@ -76,27 +76,13 @@ const STANDARD = () => {
       </LinearLayout>
     </div>
   );
-  /*return (
-    
-    <div>
-      <LinearLayout>
-        <Zero />
-        <One />
-        <Three />
-      </LinearLayout>
-      <LinearLayout>
-        <Zero />
-        <One />
-        <Three />
-      </LinearLayout>
-      <LinearLayout>
-        <Zero />
-        <One />
-        <Three />
-      </LinearLayout>
-
-    </div>
-  );*/
 };
 
-export default STANDARD; 
+const mapStateToProps = (state) =>{
+  let expression = state.expression; 
+  return {
+    expression
+  };
+};
+
+export default connect(mapStateToProps)(STANDARD); 

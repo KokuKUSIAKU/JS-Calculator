@@ -19,10 +19,12 @@
 .control-button {
   width: 100%;
   height: 100%; }
-#display {
-  height: 50px;
-  font-size: 25px;
-  border: 2px solid red; }
+#display-frame {
+  padding: 15px 0; }
+  #display-frame #display {
+    height: 50px;
+    font-size: 25px;
+    border: 2px solid red; }
 #frame {
   display: flex;
   flex-direction: column;

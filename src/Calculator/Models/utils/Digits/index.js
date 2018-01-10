@@ -1,16 +1,21 @@
 import React from "react"; 
 import DIGITS from "../constant.js";
 
-import style from "./style.scss"
+import style from "./style.scss";
 
-function createButton ({digit}) {
+function createButton ({digit, controller}) {
   return (
-    <button className="digit-button">{digit}</button>
+    <button className="digit-button" onClick={controller}>{digit}</button>
   );
 } 
 
+function buttonController(){
+  alert("fired"); 
+  return 1;
+}
+
 var Digits = {};
-Digits.Zero = createButton.bind(null, {digit:0}); 
+Digits.Zero = createButton.bind(null, {digit:0, controller:buttonController.bind(null)}); 
 Digits.One = createButton.bind(null, {digit:1});
 Digits.Two = createButton.bind(null, {digit:2});
 Digits.Three = createButton.bind(null, {digit:3});
