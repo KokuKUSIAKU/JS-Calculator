@@ -1,5 +1,7 @@
-import { connect } from "react-redux"; 
+import { bindActionCreators } from "redux";
+import { connect} from "react-redux"; 
 import React from "react";
+import * as actions from "../../CalculatorEngine/actions.js";
 import LinearLayout from "../../LinearLayout";
 import {
   Digits,
@@ -27,11 +29,11 @@ const {
 
 const { CE, C, MS, MC, MPlus, MMinus } = Controls;
 
-const STANDARD = ({expression}) => {
-  //return <div> test in STANDARD </div>;
+
+const STANDARD = () => {
   return (
     <div id="frame">
-      <Display expression={expression}/>
+      <Display/>
       <LinearLayout wrap="wrap">
         <MC />
         <MS/>
@@ -63,7 +65,7 @@ const STANDARD = ({expression}) => {
         <Minus />
       </LinearLayout>
       <LinearLayout wrap="wrap">
-        <One />
+        <One/>
         <Two />
         <Three />
         <Plus />
@@ -78,11 +80,4 @@ const STANDARD = ({expression}) => {
   );
 };
 
-const mapStateToProps = (state) =>{
-  let expression = state.expression; 
-  return {
-    expression
-  };
-};
-
-export default connect(mapStateToProps)(STANDARD); 
+export default STANDARD; 

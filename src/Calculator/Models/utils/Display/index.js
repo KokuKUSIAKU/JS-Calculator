@@ -1,4 +1,5 @@
 import React from "react";
+import {connect} from "react-redux";
 import style from "./style.scss";
 
 function Display({ expression }) {
@@ -9,4 +10,10 @@ function Display({ expression }) {
   );
 }
 
-export default Display; 
+const mapStateToProps = (state) => {
+  return {
+    expression:state.expression,
+  };
+};
+
+export default connect(mapStateToProps)(Display); 
