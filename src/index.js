@@ -1,7 +1,10 @@
 import React from "react";
 import { Provider } from "react-redux";
 import { render } from "react-dom";
-import { store } from "./calculator/CalculatorEngine";
+// obliged to break down the import from CalculatorEngine module 
+// to avoid multiple module import that differ only in casing warning !
+// Need to import actions 
+import store  from "./calculator/CalculatorEngine/store.js";
 //import CalculatorFrame from "./CalculatorFrame";
 import Calculator from "./Calculator";
 

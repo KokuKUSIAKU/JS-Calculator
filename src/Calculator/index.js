@@ -7,7 +7,6 @@ class Calculator extends React.Component {
   constructor(props){
     super(props); 
     this.state = {
-      test:<div> test </div>,
       model:<Models.Standard/>,
       CalculatorUI:null,
     }; 

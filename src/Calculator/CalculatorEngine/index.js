@@ -3,5 +3,5 @@ import actions from "./actions.js";
 
 export {
   store,
-  actions
+  actions 
 }; 
